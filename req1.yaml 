@@ -14,9 +14,9 @@
                   
    - name: Apply new ACL to R2 Eth0/1 out
       ios_config:
+        parents: interface Ethernet0/1
         lines:
           - ip access-group REQ1 out
-        parents: interface Ethernet0/1
       tags:
         - apply_acl_e0/1
 
