@@ -14,17 +14,17 @@
                   
     - name: Apply new ACL to R2 Eth0/1 out
       ios_config:
-        parents: interface Ethernet0/1 out
+        parents: interface Ethernet0/1
         lines:
           - ip access-group REQ1 out
 
-   - name: Check result
+    - name: Check result
       ios_command:
-        commands: sh run | show ip access-lists REQ1
+        commands: show run | include access-lists REQ1
       register: result
       tags: show
 
-   - name: Print result
+    - name: Print result
       debug:
-        var: acl_results.stdout_lines
+        var: result.stdout_lines
       tags: show
