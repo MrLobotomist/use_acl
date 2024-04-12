@@ -23,7 +23,7 @@
     - name: Check applied ACL on interface Ethernet0/1
       ios_command:
         commands:
-          - show access-lists REQ1
+          - show ip access-lists REQ1
           - show run interface Ethernet0/1
       register: acl_results
       tags:
