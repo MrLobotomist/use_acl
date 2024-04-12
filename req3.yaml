@@ -17,7 +17,7 @@
       ios_config:
         parents: interface Ethernet0/0.10  
         lines:
-          - ip access-group REQ3
+          - ip access-group REQ3 in
 
     - name: Check result
       ios_command:
