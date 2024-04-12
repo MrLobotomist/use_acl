@@ -17,8 +17,6 @@
         parents: interface Ethernet0/1 out
         lines:
           - ip access-group REQ1 out
-      tags:
-        - apply_acl_e0/1
 
     - name: Check applied ACL on interface Ethernet0/1
       ios_command:
@@ -26,13 +24,9 @@
           - show ip access-lists REQ1
           - show run interface Ethernet0/1
       register: acl_results
-      tags:
-        - check_acl
 
     - name: Display ACL and interface configuration
       debug:
         msg: |
           Results of applied ACL on interface Ethernet0/1:
           {{ acl_results.stdout }}
-      tags:
-        - display_results
