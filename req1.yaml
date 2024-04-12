@@ -17,10 +17,10 @@
         parents: interface Ethernet0/1 out
         lines:
           - ip access-group REQ1 out
-          
+
    - name: Check result
      ios_command:
-       commands: sh run | ip access-lists REQ1
+       commands: sh run | show ip access-lists REQ1
      register: result
      tags: show
 
