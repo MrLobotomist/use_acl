@@ -1,6 +1,6 @@
 ---
 - name: Configure standard ACL
-  hosts: R2
+  hosts: 10.0.0.2
   gather_facts: false
   connection: network_cli
  
